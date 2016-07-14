@@ -1,0 +1,88 @@
+
+#menu {
+    float: left;
+    position: relative;
+    z-index: -1;
+    width: 25%;
+    max-width: 45%;
+    min-height: 300px;
+    background-color: #ccc;
+    overflow: auto;
+}
+#menu-header{
+    margin: 0;
+    overflow: hidden;
+    zoom: 1;
+    background-color: #003;
+}
+#menu-header>li {
+    float: left;
+    width: 25%;
+    color: #fff;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    list-style-type: none;
+    cursor: pointer;
+}
+#menu-list{
+    position: relative;
+    padding: 15px 0 20px;
+    margin: 0;
+    text-align: center;
+}
+#menu-list li a {
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+    color: #000;
+    font: bold 15px/30px century gothic;
+    text-decoration: none;
+}
+#menu-list li a:hover {
+    color: #000;
+    background-color: #ff0;
+}
+#menu-list>li{
+    cursor: pointer;
+}
+#menu-list>li:hover{
+    cursor: pointer;
+    color: #000;
+    background-color: #ff0;
+}
+#menu .title{
+    padding: 0 5px;
+    font: bold small/normal century gothic;
+    text-align: left;
+}
+#menu .author{
+    padding: 0 5px;
+    font: italic xx-small/normal tahoma;
+    text-align: right;
+}
+#menu .menu-item-highlighted{
+    background: #fff;
+}
+#content {
+width: 75%;
+min-width: 55%;
+}
+#content-textbox h1 {
+    margin: 1em 30px;
+    font: 2.2em Verdana, Arial, Helvetica, sans-serif;
+}
+#content-textbox h2 {
+    font: .5em "trebuchet MS", Arial, Helvetica, sans-serif;
+    margin: 0 30px;
+}
+#content-textbox p {
+    font: 1.5em Baskerville, "Times New Roman", Times, serif;
+    margin: 1em 30px;
+}
+#seperator {
+    float: left;
+    cursor: w-resize;
+    width: 1%;
+    background: #666 content-box;
+}

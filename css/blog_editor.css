@@ -1,0 +1,18 @@
+#editor-form {
+    float: left;
+    position: relative;
+    margin: 20px;
+    left: 50%;
+}
+#editor-form > * {
+    position: relative;
+    left: -50%;
+}
+#editor-form td , #editor-form p {
+    width: 150px;
+    height: 30px;
+}
+#editor-form textarea {
+    height: 300px;
+    width: 200%;
+}
