@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Eric's site 1</title>
+		<link rel="stylesheet" type="text/css" href="/css/layout.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/blog_reader.css"/>
+	</head>
+	<body>
+		<div id="header">
+		This is the header.
+		</div>
+		<div id="nav">
+			<div id="main-button-container">
+				<div id="main-button"></div>
+			</div>
+			<ul>
+				<li class="nav-button">
+					<a href="index.html">HOME</a>
+					<div class="min-container">
+						<div class="slidedown-container">
+							<ul class="first-level-dropdown">
+								<li class="first-level-dropdown-option">
+									<a>1lsub-option1</a>
+									<div class="slidedown-container">
+										<ul class="second-level-dropdown">
+											<li>2lsub1-option1</li>
+											<li>2lsub1-option2</li>
+										</ul>
+									</div>
+								</li>
+								<li class="first-level-dropdown-option">
+									<a>1lsub-option2</a>
+									<div class="slidedown-container">
+										<ul class="second-level-dropdown">
+											<li>2lsub2-option1</li>
+											<li>option2</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="nav-button">
+					<a href="page2.html">Page2</a>
+					<div class="min-container">
+						<div class="slidedown-container">
+							<ul class="first-level-dropdown">
+								<li class="first-level-dropdown-option">
+									<a>1lsub-option1</a>
+									<div class="slidedown-container">
+										<ul class="second-level-dropdown">
+											<li>2lsub1-option1</li>
+											<li>option2</li>
+										</ul>
+									</div>
+								</li>
+								<li class="first-level-dropdown-option">
+									<a>option2</a>
+									<div class="slidedown-container">
+										<ul class="second-level-dropdown">
+											<li>2lsub2-option1</li>
+											<li>option2</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="nav-button">
+					<a href="/blog.html">BLOG</a>
+					<div class="min-container">
+						<div class="slidedown-container">
+							<ul class="first-level-dropdown">
+								<li class="first-level-dropdown-option"><a href="/blog_editor.html">Post New</a></li>
+								<li class="first-level-dropdown-option">
+									<a href="/blog_reader.html">Blog Reader</a>
+									<div class="slidedown-container">
+										<ul class="second-level-dropdown">
+											<li>2lsub2-option1</li>
+											<li>option2</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="nav-button">
+					<a href="#">Button4</a>
+					<div class="min-container">
+						<div class="slidedown-container">
+							<ul class="first-level-dropdown">
+								<li class="first-level-dropdown-option">
+									<a>1lsub-option1</a>
+									<div class="slidedown-container">
+										<ul class="second-level-dropdown">
+											<li>2lsub1-option1</li>
+											<li>option2</li>
+										</ul>
+									</div>
+								</li>
+								<li class="first-level-dropdown-option">
+									<a>option2</a>
+									<div class="slidedown-container">
+										<ul class="second-level-dropdown">
+											<li>2lsub2-option1</li>
+											<li>option2</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div id="menu">
+			<ul id="menu-header">
+				<li>Title</li>
+				<li>Date</li>
+				<li>Comments</li>
+				<li>Views</li>
+			</ul>
+			<ul id="menu-list">
+			</ul>
+		</div>
+		<div id="content">
+			<div id="seperator"></div>
+			<div id="content-textbox">
+			</div>
+		</div>
+		<div id="footer">
+		This is the footer.
+		</div>
+		<div id="footer1">
+			This is footer1.
+		</div>    
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+			<script src="/scripts/level_two_columns.js"></script>
+			<script src="/scripts/set_up_slide_dropdown.js"></script>
+			<script src="/scripts/set_up_resizable_seperator.js"></script>
+			<script src="/scripts/set_up_floating_bars.js"></script>
+			<script src="/scripts/load_blog_list.js"></script>
+			<script src="/scripts/load_blog_content.js"></script>
+			<script src="/scripts/layout.js"></script>
+			<script src="/scripts/set_up_menu_header.js"></script>
+		<script>
+			(function () {
+				var i, len;
+				newbeef.setUpSlideDropdown("nav-button");
+				newbeef.setUpSlideDropdown("first-level-dropdown-option");
+				newbeef.blogReader.setUpResizableSeperator("menu", "seperator", "content", newbeef.blogReader.setLayout);
+				newbeef.setUpFloatingBars();
+				newbeef.blogReader.loadBlogList("Title", function () {
+					var items, liclassname;
+					var strindex, strlen, substr1, substr2;
+
+					newbeef.blogReader.setLayout();
+					lis = document.getElementById("menu-list").getElementsByTagName("li");
+					for (i = 0, len = lis.length; i < len; i++) {
+						lis[i].onclick = function () {//control the behavior of the menu when a menu item is clicked.
+							strlen = "menu-item-highlighted".length;
+							for (i = 0; i < len; i++) {
+								liclassname = lis[i].className;
+								strindex = liclassname.search(/menu-item-highlighted/);
+								if (strindex + 1) {
+									substr1 = liclassname.substring(0, strindex);
+									substr2 = liclassname.substring(strindex + strlen);
+									lis[i].className = substr1.concat(substr2);
+								}
+							}
+							this.className = this.className.concat(" menu-item-highlighted");
+							newbeef.blogReader.loadBlogContent("content-textbox", newbeef.blogReader.setLayout);
+						}
+					}
+				});
+			}());
+		</script>
+	</body>
+</html>

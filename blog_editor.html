@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Eric's site 1</title>
+		<link rel="stylesheet" type="text/css" href="/css/layout.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/blog_editor.css"/>
+	</head>
+	<body>
+		<div id="header">
+		This is the header.
+		</div>
+		<div id="nav">
+			<div id="main-button-container">
+				<div id="main-button"></div>
+			</div>
+			<ul>
+				<li class="nav-button">
+					<a href="index.html">HOME</a>
+					<div class="min-container">
+						<div class="slidedown-container">
+							<ul class="first-level-dropdown">
+								<li class="first-level-dropdown-option">
+									<a>1lsub-option1</a>
+									<div class="slidedown-container">
+										<ul class="second-level-dropdown">
+											<li>2lsub1-option1</li>
+											<li>2lsub1-option2</li>
+										</ul>
+									</div>
+								</li>
+								<li class="first-level-dropdown-option">
+									<a>1lsub-option2</a>
+									<div class="slidedown-container">
+										<ul class="second-level-dropdown">
+											<li>2lsub2-option1</li>
+											<li>option2</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="nav-button">
+					<a href="page2.html">Page2</a>
+					<div class="min-container">
+						<div class="slidedown-container">
+							<ul class="first-level-dropdown">
+								<li class="first-level-dropdown-option">
+									<a>1lsub-option1</a>
+									<div class="slidedown-container">
+										<ul class="second-level-dropdown">
+											<li>2lsub1-option1</li>
+											<li>option2</li>
+										</ul>
+									</div>
+								</li>
+								<li class="first-level-dropdown-option">
+									<a>option2</a>
+									<div class="slidedown-container">
+										<ul class="second-level-dropdown">
+											<li>2lsub2-option1</li>
+											<li>option2</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="nav-button">
+					<a href="/blog.html">BLOG</a>
+					<div class="min-container">
+						<div class="slidedown-container">
+							<ul class="first-level-dropdown">
+								<li class="first-level-dropdown-option"><a href="/blog_editor.html">Post New</a></li>
+								<li class="first-level-dropdown-option">
+									<a href="/blog_reader.html">Blog Reader</a>
+									<div class="slidedown-container">
+										<ul class="second-level-dropdown">
+											<li>2lsub2-option1</li>
+											<li>option2</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="nav-button">
+					<a href="#">Button4</a>
+					<div class="min-container">
+						<div class="slidedown-container">
+							<ul class="first-level-dropdown">
+								<li class="first-level-dropdown-option">
+									<a>1lsub-option1</a>
+									<div class="slidedown-container">
+										<ul class="second-level-dropdown">
+											<li>2lsub1-option1</li>
+											<li>option2</li>
+										</ul>
+									</div>
+								</li>
+								<li class="first-level-dropdown-option">
+									<a>option2</a>
+									<div class="slidedown-container">
+										<ul class="second-level-dropdown">
+											<li>2lsub2-option1</li>
+											<li>option2</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div id="content">
+			<h1>Share something here!</h1>
+			<form id="editor-form">
+				<table>
+					<tr>
+						<td>Title: </td>
+						<td><input type="text" name="title"></input></td>
+					</tr>
+					<tr>
+						<td>Author: </td>
+						<td><input type="text" name="author"></input></td>
+					</tr>
+					<tr>
+						<td>Picture: </td>
+						<td><input type="file" name="image"></input></td>
+					</tr>
+				</table>
+				<p>Compose here: </p>
+				<textarea></textarea>
+				<p>Tags</p>
+				<p><input type="reset"></input><input type="submit"></input></p>
+			</form>
+		</div>
+		<div id="footer">
+		This is the footer.
+		</div>
+		<div id="footer1">
+			This is footer1.
+		</div> 
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+			<script src="scripts/set_up_slide_dropdown.js"></script>
+			<script src="scripts/set_up_floating_bars.js"></script>
+			<script src="/scripts/layout.js"></script>
+		<script>
+			(function () {
+				newbeef.setUpSlideDropdown("nav-button");
+				newbeef.setUpSlideDropdown("first-level-dropdown-option");
+				newbeef.setUpFloatingBars();
+				newbeef.layout.setLayout();
+			} ());
+		</script>
+	</body>
+</html>
