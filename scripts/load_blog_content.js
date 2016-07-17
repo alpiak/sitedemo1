@@ -27,6 +27,7 @@ if (typeof newbeef.blogReader === "undefined") {
         function IEGetElementById(id) {
             var element;
             var allelements = this.getElementsByTagName("*");
+			
             for (x in allelements) {
                 if (allelements[x].getAttribute("id") == id || allelements[x].getAttributeNS("ns", "id") == id) {
                     element = allelements[x];
@@ -38,6 +39,8 @@ if (typeof newbeef.blogReader === "undefined") {
 
         function _stateChange() {
             var element, txt = "";
+			var i, len;
+			
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 xmlDoc = xmlhttp.responseXML;
                 element = xmlDoc.getElementById(blogid) || IEGetElementById.call(xmlDoc, blogid);
@@ -52,15 +55,14 @@ if (typeof newbeef.blogReader === "undefined") {
                     if (picture_url.search(/\S+/) + 1) {
                         txt = txt + '<img src="' + picture_url + '" alt="Title picture" title="Title picture" style="float: right; max-width: 50%"/>';
                     }
-                    for (var i = 0; i < paragraphs.length; i++) {
+                    for (i = 0, len = paragraphs.length; i < len; i++) {
                         txt = txt + "<p>" + paragraphs[i] + "</p>";
                     }
-                }
-                catch (e) {
+                } catch (e) {
                     txt = "Error: " + e.message;
                 }
                 document.getElementById(id).innerHTML = txt;
-                if (callback) {
+                if (typeof callback === "function") {
                     if (picture_url.search(/\S+/) + 1) {
                         document.getElementById(id).getElementsByTagName("img")[0].onload = callback;
                     } else {

@@ -48,15 +48,27 @@ if (typeof newbeef.blogGallery === "undefined") {
                 }
             }
             document.getElementById(id).innerHTML = txt;
-            if (callback) {
+            if (typeof callback === "function") {
                 callback();
             }
         }
 
-        if (window.XMLHttpRequest) {
+        try {
             xmlhttp = new XMLHttpRequest();
-        } else {
-            xmlhttp = new AcitveXObject("Microsoft.XMLHTTP");
+        } catch (tryMS) {
+            try {
+                xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (otherMS) {
+                try {
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (failed) {
+                    xmlhttp = null;
+                }
+            }
+        }
+		
+		if (xmlhttp === null) {
+            return;
         }
 
         xmlhttp.onreadystatechange = onStateChange;

@@ -25,6 +25,9 @@ if (typeof newbeef.blogReader === "undefined") {
 					left.style.width = leftwidthpercent - 1.3 + "%";
 					right.style.width = 100 - parseFloat(left.style.width, 10) + "%";
 				}
+				if (typeof callback === "function"){
+					callback();
+				}
 			}
 			
             seperator.onmousedown = function () {
@@ -34,11 +37,8 @@ if (typeof newbeef.blogReader === "undefined") {
                 document.onmousemove = resize;
             }
             document.onmouseup = function () {
-                document.onmousemove = undefined;
+                document.onmousemove = null;
             }
-			if (typeof callback === "function"){
-				callback();
-        }
         }
     }());
 }());

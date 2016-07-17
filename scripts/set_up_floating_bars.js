@@ -30,7 +30,6 @@ if (typeof newbeef === "undefined") {
                     nav.style.position = "relative";
                 }
 
-				console.log(_documentHeight,"<",_scrollTop,window.innerHeight,"+5",_scrollTop+window.innerHeight);
                 // behavior of the footer bar
                 if (footer.style.position === "fixed" &&
             _documentHeight < _scrollTop + window.innerHeight + 5) {

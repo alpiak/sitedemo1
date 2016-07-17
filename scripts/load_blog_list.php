@@ -32,18 +32,16 @@ if ($sort) {
         //try{
         $title=$blog->getElementsByTagName("TITLE")->item(0)->firstChild->nodeValue;
         $txt.='<div class="title">'.$title."</div>";
-        //   }
-        //catch(er){
-        //txt=txt+'<div class="title"></div>';
-        //   }
+        //} catch(er){
+        //	txt=txt+'<div class="title"></div>';
+        //  }
         //try{
         $author=$blog->getElementsByTagName("AUTHOR")->item(0)->firstChild->nodeValue;
         $postdate=$blog->getElementsByTagName("POSTDATE")->item(0)->firstChild->nodeValue;
         $txt.='<div class="author">by '.$author."on ".$postdate."</div>";
-        //   }
-        //catch(er){
-        //txt=txt+'<div class="author"></div>';
-        //   }
+        //} catch(er){
+        //	txt=txt+'<div class="author"></div>';
+        //}
         $txt.="</li>";
     }
     echo $txt;

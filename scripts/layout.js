@@ -2,6 +2,7 @@
 if (typeof newbeef === "undefined") {
     var newbeef = {};
 }
+
 // sub name spaces
 if (typeof newbeef.blogReader === "undefined") {
     newbeef.blogReader = {};
@@ -17,6 +18,7 @@ newbeef.setLayout = (function () {
     document.documentElement.scrollHeight));
     
     return function () {
+		
         // Set footer
         if (_documentHeight < window.innerHeight) {
             footer.style.position = "static";
@@ -41,6 +43,7 @@ newbeef.blogReader.setLayout = (function (resetLayout, setLayout) {
     return function () {
         resetLayout();
         setLayout();
+		
         // set seperator
         if (content.offsetHeight > menu.offsetHeight) {
             seperator.style.height = content.offsetHeight + "px";

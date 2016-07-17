@@ -51,7 +51,7 @@ if (typeof newbeef.blogReader === "undefined") {
                 menulist.removeChild(loading);
                 txt = xmlhttp.responseText;
                 menulist.innerHTML = txt;
-                if (callback) {
+                if (typeof callback === "function") {
                     callback();
                 }
             }
