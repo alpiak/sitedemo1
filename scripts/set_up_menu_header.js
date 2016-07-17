@@ -1,4 +1,4 @@
-(function (loadBlogContent) {
+(function (loadBlogContent, loadBlogList) {
     var i;
     var lis, li;
     var sort;
@@ -33,4 +33,4 @@
             });
         }
     }
-}(newbeef.blogReader.loadBlogContent));
+}(newbeef.blogReader.loadBlogContent, newbeef.blogReader.loadBlogList));
