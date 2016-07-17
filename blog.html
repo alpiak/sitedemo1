@@ -141,13 +141,13 @@
 		<script src="/scripts/layout.js"></script>
 		<script src="/scripts/load_blog_gallery.js"></script>
 		<script>
-			(function () {
-				newbeef.setUpSlideDropdown("nav-button");
-				newbeef.setUpSlideDropdown("first-level-dropdown-option");
-				newbeef.setUpFloatingBars();
-				newbeef.setLayout();
-				newbeef.blogGallery.loadBlogGallery("content", newbeef.blogGallery.setLayout);
-			}());
+			(function ($$) {
+				$$.setUpSlideDropdown("nav-button");
+				$$.setUpSlideDropdown("first-level-dropdown-option");
+				$$.setUpFloatingBars();
+				$$.setLayout();
+				$$.blogGallery.loadBlogGallery("content", newbeef.blogGallery.setLayout);
+			}(newbeef));
 		</script>
 	</body>
 </html>

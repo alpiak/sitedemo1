@@ -149,20 +149,20 @@
 			<script src="/scripts/layout.js"></script>
 			<script src="/scripts/set_up_menu_header.js"></script>
 		<script>
-			(function () {
+			(function ($$) {
 				var i, len;
-				newbeef.setUpSlideDropdown("nav-button");
-				newbeef.setUpSlideDropdown("first-level-dropdown-option");
-				newbeef.blogReader.setUpResizableSeperator("menu", "seperator", "content", newbeef.blogReader.setLayout);
-				newbeef.setUpFloatingBars();
-				newbeef.blogReader.loadBlogList("Title", function () {
+				$$.setUpSlideDropdown("nav-button");
+				$$.setUpSlideDropdown("first-level-dropdown-option");
+				$$.blogReader.setUpResizableSeperator("menu", "seperator", "content", $$.blogReader.setLayout);
+				$$.setUpFloatingBars();
+				$$.blogReader.loadBlogList("Title", function () {
 					var items, liclassname;
 					var strindex, strlen, substr1, substr2;
 
-					newbeef.blogReader.setLayout();
+					$$.blogReader.setLayout();
 					lis = document.getElementById("menu-list").getElementsByTagName("li");
 					for (i = 0, len = lis.length; i < len; i++) {
-						lis[i].onclick = function () {//control the behavior of the menu when a menu item is clicked.
+						lis[i].onclick = function () { //control the behavior of the menu when a menu item is clicked.
 							strlen = "menu-item-highlighted".length;
 							for (i = 0; i < len; i++) {
 								liclassname = lis[i].className;
@@ -174,11 +174,11 @@
 								}
 							}
 							this.className = this.className.concat(" menu-item-highlighted");
-							newbeef.blogReader.loadBlogContent("content-textbox", newbeef.blogReader.setLayout);
+							$$.blogReader.loadBlogContent("content-textbox", $$.blogReader.setLayout);
 						}
 					}
 				});
-			}());
+			}(newbeef));
 		</script>
 	</body>
 </html>
