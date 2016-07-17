@@ -2,7 +2,7 @@
 #menu {
     float: left;
     position: relative;
-    z-index: -1;
+    z-index: 0;
     width: 25%;
     max-width: 45%;
     min-height: 300px;
@@ -65,8 +65,8 @@
     background: #fff;
 }
 #content {
-width: 75%;
-min-width: 55%;
+	width: 75%;
+	min-width: 55%;
 }
 #content-textbox h1 {
     margin: 1em 30px;

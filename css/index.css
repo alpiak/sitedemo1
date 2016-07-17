@@ -1,0 +1,25 @@
+#content-wrapper {
+	position: relative;
+	width: 100%;
+}
+#left {
+	position: absolute;
+	left: 0; top: 0;
+	width: 150px;
+	height: 100px;
+	background-color: #6aa;
+}
+#main {
+	position: relative;
+	height: 100px;
+	margin: 0 120px 0 150px;
+	width: auto;
+	background: #aaa;
+}
+#right {
+	position: absolute;
+	right: 0; top: 0;
+	width: 120px;
+	height: 120px;
+	background-color: #a6a;
+}
