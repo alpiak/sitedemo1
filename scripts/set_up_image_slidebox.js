@@ -24,15 +24,13 @@ if (typeof newbeef === undefined) {
 							clearInterval(interval);
 							imageul.className = imageul.className.replace("onclone", "");
 						}
-					}, 100);
+					}, 50);
 				}, 1000);
 			}
 		}
 		
 		return function () {
-			var interval;
-			
-			interval = setInterval(function () {
+			var interval = setInterval(function () {
 				lastActive = active;
 				if (active < 4) {
 					active++;

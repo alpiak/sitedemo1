@@ -8,7 +8,6 @@ if (typeof newbeef.blogReader === "undefined") {
 (function () {
     newbeef.blogReader.loadBlogList =
     function (sort, callback) {
-
         var xmlhttp;
         var blogs, blogid, ul;
         var menulist = document.getElementById("menu-list");
@@ -56,6 +55,5 @@ if (typeof newbeef.blogReader === "undefined") {
                 }
             }
         }
-
     }
 }());

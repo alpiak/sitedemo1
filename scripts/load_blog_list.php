@@ -7,10 +7,10 @@ switch ($_GET['sort']) {
         $sort = "POSTDATE";
         break;
     case "Comments":
-        $sort = NULL;
+        $sort = NULL; // not yet achieved
         break;
     case "Views":
-        $sort = NULL;
+        $sort = NULL; // not yet achieved
         break;
     default:
         $sort = "TITLE";
@@ -20,6 +20,7 @@ if ($sort) {
     $xmlDoc = new DOMDocument();
     $xmlDoc->load("../resources/blogs.xml");
     $blogs = $xmlDoc->getElementsByTagName("BLOG");
+	
     foreach($blogs as $blog){
         $key = $blog->getElementsByTagName($sort)->item(0)->firstChild->nodeValue;
         $blogsarray[$key] = $blog;
@@ -46,6 +47,6 @@ if ($sort) {
     }
     echo $txt;
 } else {
-    echo NULL;
+    echo NULL; // exit for the features not yet achieved
 }
 ?>
