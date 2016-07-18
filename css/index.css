@@ -40,6 +40,12 @@ html {
 	-o-transition-property: left;
 	-o-transition-duration: 1s;
 }
+#image-slidebox ul.onclone {
+	transition-duration: 0s;
+	-moz-transition-duration: 0s;
+	-webkit-transition-duration: 0s;
+	-o-transition-duration: 0s;
+}
 #image-slidebox ul li{
 	float: left;
 	width: 450px;
