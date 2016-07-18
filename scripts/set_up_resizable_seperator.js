@@ -18,7 +18,7 @@ if (typeof newbeef.blogReader === "undefined") {
 				var _event = window.event || arguments.callee.arguments[0];
 				var eventXDiff = _event.clientX - originEventX;
 				
-				if (eventXDiff > 8 || eventXDiff < -8) {
+				if (Math.abs(eventXDiff) > 8) {
 					var leftwidthpercent = _event.clientX / document.body.clientWidth * 100;
 					
 					originEventX = _event.clientX;
