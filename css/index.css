@@ -31,6 +31,14 @@ html {
 	height: 300px;
 	padding: 0;
 	margin: 0;
+	transition-property: left;
+	transition-duration: 1s;
+	-moz-transition-property: left;
+	-moz-transition-duration: 1s;
+	-webkit-transition-property: left;
+	-webkit-transition-duration: 1s;
+	-o-transition-property: left;
+	-o-transition-duration: 1s;
 }
 #image-slidebox ul li{
 	float: left;
